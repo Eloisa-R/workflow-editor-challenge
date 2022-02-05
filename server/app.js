@@ -14,10 +14,16 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', process.env.CLIENT_URL);
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use(routes);
 
 app.use((req, res) => {
   logger.log({ level: 'error', message: 'Not found', requestPath: req.path });
   res.status(404).send({ status: 404, description: 'Resource not found' });
 });
-app.listen(3000);
+app.listen(8080);
