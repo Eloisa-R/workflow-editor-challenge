@@ -10,3 +10,13 @@
 .section__error {
     color: black;
 }
+
+.section__content__button {
+    background: #D50032;
+    padding: 15px 20px;
+    color: #fff;
+    border: 0;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}

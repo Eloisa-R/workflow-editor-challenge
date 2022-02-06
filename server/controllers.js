@@ -3,8 +3,8 @@ const Workflow = require('./models');
 const validateSchema = require('./utils/schemaValidator');
 
 const getWorkflow = (req, res) => {
-  const { workflowId } = req.params;
-  Workflow.findById(workflowId, (error, workflow) => {
+  const { workflowDesc } = req.params;
+  Workflow.findOne({ description: workflowDesc }, (error, workflow) => {
     if (error) {
       logger.log({ level: 'error', endpoint: 'getWorkflow', messsage: error });
       return res.status(500).send({ status: '500', description: 'Internal Server Error' });
