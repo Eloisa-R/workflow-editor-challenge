@@ -1,5 +1,5 @@
 import './App.css';
-import Workflow from './components/Workflow';
+import Workflow from './components/Workflow/Workflow';
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <header className="app__header">
        <h1>Workflow Editor</h1>
       </header>
-      <main><Workflow/></main>
+      <main><Workflow workflowType="Pippete_Calibration_Workflow"/></main>
       </div>
   );
 }

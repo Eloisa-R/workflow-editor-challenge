@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+// Se issue https://github.com/ZeeCoder/use-resize-observer/issues/40
+class ResizeObserver {
+  observe() {}
+
+  unobserve() {}
+}
+
+test('renders the text "Workflow Editor"', () => {
+  window.ResizeObserver = ResizeObserver;
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const h1Element = screen.getByText('Workflow Editor');
+  expect(h1Element).toBeInTheDocument();
 });

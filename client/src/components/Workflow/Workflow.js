@@ -1,25 +1,23 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Workflow.css';
-import Flowchart from './Flowchart';
+import Flowchart from '../Flowchart/Flowchart';
 
-function Workflow() {
+function Workflow(props) {
   const [workflow, setWorkflow] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const workflowDesc = 'Pippete_Calibration_Workflow';
-
     async function getWorkflow() {
       try {
-        const { data } = await axios.get(`${process.env.REACT_APP_SERVER_BASE_URL}/workflow/${workflowDesc}`);
+        const { data } = await axios.get(`${process.env.REACT_APP_SERVER_BASE_URL}/workflow/${props.workflowType}`);
         setWorkflow(data);
       } catch {
         setError('Could not fetch the workflow data');
       }
     }
     getWorkflow();
-  }, []);
+  }, [props.workflowType]);
 
   const handleClick = async () => {
     const { _id: id } = workflow;

@@ -1,0 +1,4 @@
+DB_USER_NAME = ""
+DB_PASSWORD = ""
+NODE_ENV = ""
+CLIENT_URL = "http://localhost:3000"

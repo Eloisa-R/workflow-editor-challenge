@@ -21,6 +21,7 @@ const updateWorkflow = (req, res) => {
   }
   Workflow.findByIdAndUpdate(workflowId, workflowData, (error) => {
     if (error) {
+      logger.log({ level: 'error', endpoint: 'updateWorkflow', messsage: error });
       return res.status(500).send({ status: '500', description: 'Internal Server Error' });
     }
     return res.status(200).send({ status: 200, description: 'Workflow updated' });
