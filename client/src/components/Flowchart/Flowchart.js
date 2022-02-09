@@ -42,6 +42,7 @@ function Flowchart(props) {
             source: previousStepId,
             target: nextStepId,
             animated: true,
+            style: { stroke: '#d50032' },
           });
         }
       });

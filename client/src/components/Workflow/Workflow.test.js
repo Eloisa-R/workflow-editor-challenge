@@ -5,7 +5,7 @@ import Workflow from './Workflow';
 
 jest.mock('axios');
 
-// Se issue https://github.com/ZeeCoder/use-resize-observer/issues/40
+// See issue https://github.com/ZeeCoder/use-resize-observer/issues/40
 class ResizeObserver {
   observe() {}
 
