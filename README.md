@@ -4,16 +4,22 @@
 
 1. Server side
 
-    1.1 Environment variables: create a .env file and copy the values from the .environment-example file in it. The .env file is picked up by `dotenv` in `app.js`.
-    1.2 Database setup: the project uses MongoDB Atlas. You can create an account here https://www.mongodb.com/es/cloud/atlas/register and then input your username (`DB_USER_NAME`) and password (`DB_PASSWORD`) in the .env file.
+    1.1 Environment variables: create a `.env` file and copy the values from the `.environment-example` file in it. The .env file is picked up by `dotenv` in `app.js`.
+    
+    1.2 Database setup: the project uses MongoDB Atlas. You can create an account here https://www.mongodb.com/es/cloud/atlas/register and then input your username (`DB_USER_NAME`) and password (`DB_PASSWORD`) in the `.env` file.
+    
     1.3 The `NODE_ENV` variable is used in the logger setup: if it is set to `production` the logs will be saved to files.
+    
     1.4 Install the dependencies with `npm install`.
+    
     1.5 Run the project with `npm start` (or in development mode with nodemon with `npm run dev`).
 
 2. Client side
 
-    2.1 Environment variables: create a .env file and copy the values from the .environment-example file in it.
+    2.1 Environment variables: create a `.env` file and copy the values from the `.environment-example` file in it.
+    
     2.2 Install the dependencies with `npm install`.
+    
     2.3 Run the project with `npm start`.
 
 
@@ -38,7 +44,7 @@
 
     2.2 Redux/Context API: I decided to pass data simply as props instead of using a store management system or the Context API since the application is quite small and only two components need access to the data.
 
-    2.3 react-flow-renderer: I decided to use an external library to create the flowchart; however in an actual production application it should be considered if a library offers enough room for customisation or if it's worth building an in-house solution that could be reused across all of the frontend projects (which would provide style consistency).
+    2.3 react-flow-renderer: I decided to use an external library to create the flowchart; however in an actual production application it should be considered if a library offers enough room for customisation or if it's worth building an in-house solution that could be reused across all of the frontend projects (which would provide style consistency). If I had had more time, I would have also displayed the workflow in steps and substeps (as it is described in the SOP) and I would have used an arrow to indicate the repetition of the steps (rather than indicating it in text), since visually, as it is now, the workflow seems completely linear and it could be confusing.
 
     2.4 "Save" button in the Workflow component: I added a button that calls the `POST` endpoint in the server. With more time, I would have added editing functionality so that the endpoint can be properly used (right now the data sent back to the server is the same that was fetched). I would have also added "loading" and "success" messages.
 
